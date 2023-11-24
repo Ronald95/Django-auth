@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="text-center display-3 py-5">Tareas</h1>
+<main class="container">
+<div class="rov">
+    <div class="col-md-8 offset-md-2">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Prioridad</th>
+                    <th scope="col">Fecha completado</th>
+                    <th scope="col">Usuario</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+            {% for task in tasks %}
+            <tr>
+                <th scope="row"><a href="{% url 'detail.task' task.id %}">{{ task.title}}</a></th>
+                <td>{{ task.description}}</td>
+                <td>{{ task.important}}</td>
+                <td>{{ task.datecompleted|date:'j M Y:i'}}</td>
+                <td>{{ task.user}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+</main>
+
+
+
+{% endblock%}

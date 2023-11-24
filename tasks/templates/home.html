@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main class="container py-5">
+    <section class="card card-body">
+        <h1 class="display-1 text-center">Home</h1>
+        <p>adasdasdasdasdasdasdas dsadas das adas das adasdasdasd adasdadasdasadasdasdasda ada sdasd aasdadasd adas ddasd adas adas dadasd asdas dasdasdadas
+            a dasdas daddasd asdasd adas dasd asdas fgdfgdfhghg hdgdggfdgdf ggdfg
+            g dfgdfg dfggdfgdfgddg
+        </p>
+
+        {% if user.is_authenticated == False %}
+        <div class="text-center">
+            <a class="btn btn-primary" href="/signin">
+                Iniciar sesion
+            </a>
+            <a class="btn btn-success" href="/signup">
+                Registrarse
+            </a>
+        </div>
+        {% endif%}
+    </section>
+
+</main>
+
+{% endblock%}
+
